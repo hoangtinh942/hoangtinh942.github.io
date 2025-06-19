@@ -1,148 +1,43 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trang cá nhân - Hoàng Văn Tình</title>
-  <style>
-    /* CSS Tổng hợp */
-    :root {
-      --primary: #4e54c8;
-      --secondary: #8f94fb;
-      --text: #333;
-      --bg: #f7f9fc;
-    }
+<h1>Gooey Menu</h1>
+<h2>Using CSS and SVG Filters</h2>
+<h3>By <a href="https://codepen.io/lbebber">Lucas Bebber</a></h3>
+<h4><a href="https://codepen.io/lbebber/pen/LELBEo" target="_blank">Version 1</a> - <a href="https://codepen.io/lbebber/pen/RNgBPP" target="_blank">Version 2</a> - Version 3 - <a href="https://codepen.io/lbebber/pen/rawQKR" target="_blank">Version 4</a></h4>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  
+  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  
+  
+</nav>
 
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-    }
 
-    .card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      padding: 2rem;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      animation: fadeIn 1.2s ease-out;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary);
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
-    }
-
-    .avatar:hover {
-      transform: scale(1.05);
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.3rem;
-    }
-
-    h2 {
-      font-size: 1rem;
-      font-weight: normal;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: var(--secondary);
-    }
-
-    .socials {
-      margin-top: 1rem;
-    }
-
-    .socials a {
-      margin: 0 10px;
-      font-size: 1.3rem;
-      color: var(--primary);
-      transition: transform 0.2s ease;
-      text-decoration: none;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-      color: var(--secondary);
-    }
-
-    @keyframes fadeIn {
-      from {
-        transform: translateY(30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .card {
-        margin: 1rem;
-        padding: 1.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <img src="https://i.pravatar.cc/150?img=3" alt="Avatar" class="avatar" />
-    <h1>Hoàng Văn Tình</h1>
-    <h2>Web Developer | Sinh viên IT</h2>
-    <p>
-      Xin chào! Mình là một lập trình viên trẻ, đam mê phát triển web hiện đại.
-      Mình yêu thích học hỏi, chia sẻ kiến thức và tạo ra sản phẩm có giá trị.
-    </p>
-    <a href="mailto:********@gmail.com" class="btn">Liên hệ ngay</a>
-    <div class="socials">
-      <a href="https://facebook.com" target="https://www.facebook.com/profile.php?id=100011489832599" title="Facebook">🌐</a>
-      <a href="https://github.com" target="_blank" title="GitHub">🐙</a>
-      <a href="https://linkedin.com" target="_blank" title="LinkedIn">💼</a>
-      <a href="https://ticktok.com" target="https://www.tiktok.com/@hvt9402"
-    </div>
-  </div>
-
-  <script>
-    // JS hiệu ứng console
-    console.log("%cChào bạn đến với profile cá nhân!", "color: #4e54c8; font-size: 16px;");
-  </script>
-</body>
-</html>
+<!-- filters -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+          
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
